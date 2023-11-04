@@ -9,5 +9,3 @@ WORKDIR /app
 RUN npm i -D -E react-scripts
 
 EXPOSE 8100
-
-CMD [ "ionic", "serve" ]
