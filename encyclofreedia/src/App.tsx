@@ -45,7 +45,7 @@ const App: React.FC = () => (
             <Route path="/account" render={() => <AccountPage />} exact={true} />
         </IonRouterOutlet>
         
-        <IonTabBar slot="bottom">
+        <IonTabBar slot="top" className="tabBar">
             <IonTabButton tab="home" href="/home">
               <IonIcon icon={home} />
               <IonLabel>Home</IonLabel>
