@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   IonCard,
   IonCardContent,
@@ -20,6 +20,8 @@ const TopicGuide: React.FC = () => {
   const cardHEl = useRef<HTMLIonCardElement | null>(null);
 
   const animation = useRef<Animation | null>(null);
+
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
     if (animation.current === null) {
@@ -84,6 +86,7 @@ const TopicGuide: React.FC = () => {
         .iterations(Infinity)
         .addAnimation([cardA, cardB, cardC, cardD, cardE, cardF, cardG, cardH]);
     }
+
     animation.current?.play();
   }, [
     cardAEl.current,
@@ -96,6 +99,18 @@ const TopicGuide: React.FC = () => {
     cardHEl.current,
   ]);
 
+  const play = () => {
+    animation.current?.play();
+    setIsPlaying(true);
+  };
+  const pause = () => {
+    animation.current?.pause();
+    setIsPlaying(false);
+  };
+  const stop = () => {
+    animation.current?.stop();
+  };
+
   return (
     <div
       style={{
@@ -105,56 +120,68 @@ const TopicGuide: React.FC = () => {
         height: "65vh",
       }}
     >
-      <IonCard color="tertiary" ref={cardHEl}>
+      <IonCard
+        color="tertiary"
+        ref={cardHEl}
+        onClick={isPlaying ? pause : play}
+      >
         <IonCardHeader>
           <IonCardTitle>Education</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="success" ref={cardGEl}>
+      <IonCard color="success" ref={cardGEl} onClick={isPlaying ? pause : play}>
         <IonCardHeader>
           <IonCardTitle>Environment</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="warning" ref={cardFEl}>
+      <IonCard color="warning" ref={cardFEl} onClick={isPlaying ? pause : play}>
         <IonCardHeader>
           <IonCardTitle>Organizations</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="primary" ref={cardAEl}>
+      <IonCard color="primary" ref={cardAEl} onClick={isPlaying ? pause : play}>
         <IonCardHeader>
           <IonCardTitle>Housing</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="secondary" ref={cardBEl}>
+      <IonCard
+        color="secondary"
+        ref={cardBEl}
+        onClick={isPlaying ? pause : play}
+      >
         <IonCardHeader>
           <IonCardTitle>Health</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="tertiary" ref={cardCEl}>
+      <IonCard
+        color="tertiary"
+        ref={cardCEl}
+        onClick={isPlaying ? pause : play}
+      >
         <IonCardHeader>
           <IonCardTitle>Education</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="success" ref={cardDEl}>
+      <IonCard color="success" ref={cardDEl} onClick={isPlaying ? pause : play}>
         <IonCardHeader>
           <IonCardTitle>Environment</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
         <IonCardContent>Card Content</IonCardContent>
       </IonCard>
-      <IonCard color="warning" ref={cardEEl}>
+      <IonCard color="warning" ref={cardEEl} onClick={isPlaying ? pause : play}>
         <IonCardHeader>
           <IonCardTitle>Organizations</IonCardTitle>
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>

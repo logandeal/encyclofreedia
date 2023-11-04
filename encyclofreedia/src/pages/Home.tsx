@@ -41,7 +41,7 @@ const Home: React.FC = () => {
             transform: "translate(-50%, -50%)",
           }}
         >
-          Many topics to explore...
+          Many topics to explore... click one!
         </p>
         <TopicGuide />
       </IonContent>
