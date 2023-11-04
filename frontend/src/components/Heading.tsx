@@ -1,13 +1,17 @@
 import React from "react";
-import "./Heading.css";
 
 const Heading: React.FC = () => {
   return (
-    <div id="container">
+    <div
+      style={{
+        textAlign: "center",
+      }}
+    >
       <p
         style={{
           fontFamily: "MuseoModerno",
           fontSize: "25px",
+          color: "#8c8c8c",
         }}
       >
         Welcome to{" "}

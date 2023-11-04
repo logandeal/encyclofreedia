@@ -7,6 +7,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import Heading from "../components/Heading";
+import TopicGuide from "../components/TopicGuide";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -26,6 +27,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <Heading />
+        <TopicGuide />
       </IonContent>
     </IonPage>
   );
