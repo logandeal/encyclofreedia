@@ -1,6 +1,8 @@
 # cat Dockerfile
 FROM mysql:latest
 
+RUN echo "Hello World!"
+
 RUN chown -R mysql:root /var/lib/mysql/
 
 ARG MYSQL_DATABASE
