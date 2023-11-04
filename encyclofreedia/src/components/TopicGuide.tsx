@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { globe, home, medkit, people, school } from "ionicons/icons";
 import {
   IonCard,
   IonCardContent,
   IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
-  createAnimation,
+  IonIcon,
 } from "@ionic/react";
 import type { Animation } from "@ionic/react";
 import "./TopicGuide.css";
@@ -35,6 +36,7 @@ const TopicGuide: React.FC = () => {
   return (
     <div
       style={{
+        marginTop: "50px",
         display: "flex",
         flexDirection: "column",
       }}
@@ -51,7 +53,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Housing</IonCardTitle>
+            <IonCardTitle>
+              Housing <IonIcon icon={home}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -63,7 +67,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Health</IonCardTitle>
+            <IonCardTitle>
+              Health <IonIcon icon={medkit}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -75,7 +81,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Education</IonCardTitle>
+            <IonCardTitle>
+              Education <IonIcon icon={school}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -87,7 +95,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Environment</IonCardTitle>
+            <IonCardTitle>
+              Environment <IonIcon icon={globe}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -99,7 +109,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Organizations</IonCardTitle>
+            <IonCardTitle>
+              Organizations <IonIcon icon={people}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -118,7 +130,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Housing</IonCardTitle>
+            <IonCardTitle>
+              Housing <IonIcon icon={home}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -130,7 +144,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Health</IonCardTitle>
+            <IonCardTitle>
+              Health <IonIcon icon={medkit}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -142,7 +158,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Education</IonCardTitle>
+            <IonCardTitle>
+              Education <IonIcon icon={school}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -154,7 +172,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Environment</IonCardTitle>
+            <IonCardTitle>
+              Environment <IonIcon icon={globe}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
@@ -166,7 +186,9 @@ const TopicGuide: React.FC = () => {
           onClick={isPlaying ? pause : play}
         >
           <IonCardHeader>
-            <IonCardTitle>Organizations</IonCardTitle>
+            <IonCardTitle>
+              Organizations <IonIcon icon={people}></IonIcon>
+            </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>

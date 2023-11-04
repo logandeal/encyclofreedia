@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   IonContent,
   IonHeader,
@@ -9,6 +9,7 @@ import {
 } from "@ionic/react";
 import Heading from "../components/Heading";
 import TopicGuide from "../components/TopicGuide";
+import TopicModel from "../components/TopicModel";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -16,6 +17,8 @@ const Home: React.FC = () => {
   const toggleDarkTheme = (shouldAdd: boolean) => {
     document.body.classList.toggle("dark", shouldAdd);
   };
+
+  const [topicName, setTopicName] = useState("");
 
   useEffect(() => {
     toggleDarkTheme(true);
@@ -30,20 +33,19 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <Heading />
+        <TopicGuide />
         <p
           style={{
             fontFamily: "MuseoModerno",
+            marginTop: "30px",
             fontSize: "25px",
             color: "#8c8c8c",
-            position: "absolute",
-            top: "25%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            textAlign: "center",
           }}
         >
           Many topics to explore... click one!
         </p>
-        <TopicGuide />
+        <TopicModel topicName={topicName} />
       </IonContent>
     </IonPage>
   );
