@@ -1,7 +1,24 @@
 services:
+  mysql:
+    build:
+      context: ./encyclodb
+      args:
+        - MYSQL_DATABASE=${MYSQL_DATABASE}
+        - MYSQL_USER=${MYSQL_USER}
+        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - 4000:3306
+    expose:
+      - 3306
+    volumes:
+      - encyclodb:/var/lib/mysql
   dev:
     # path to ionic Dockerfile
     build: encyclofreedia
     ports:
       - 80:8100
     command: ionic serve
+
+volumes:
+  encyclodb:
