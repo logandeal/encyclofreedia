@@ -3,4 +3,4 @@ services:
     # path to ionic Dockerfile
     build: encyclofreedia
     ports:
-      - 8100:8100
+      - 80:8100
