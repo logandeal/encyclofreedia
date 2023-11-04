@@ -1,18 +1,49 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React, { useEffect } from "react";
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonToggle,
+} from "@ionic/react";
+import Heading from "../components/Heading";
+import TopicGuide from "../components/TopicGuide";
+import "./Home.css";
 
 const Home: React.FC = () => {
+  // Add or remove the "dark" class on the document body
+  const toggleDarkTheme = (shouldAdd: boolean) => {
+    document.body.classList.toggle("dark", shouldAdd);
+  };
+
+  useEffect(() => {
+    toggleDarkTheme(true);
+  }, []);
+
   return (
     <IonPage>
-      <IonHeader>
-        
-      </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Home</IonTitle>
+            <IonTitle size="large">TEST</IonTitle>
           </IonToolbar>
         </IonHeader>
+        <Heading />
+        <p
+          style={{
+            fontFamily: "MuseoModerno",
+            fontSize: "25px",
+            color: "#8c8c8c",
+            position: "absolute",
+            top: "25%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
+          Many topics to explore...
+        </p>
+        <TopicGuide />
       </IonContent>
     </IonPage>
   );
