@@ -1,0 +1,7 @@
+services:
+  dev:
+    # path to ionic Dockerfile
+    build: encyclofreedia
+    ports:
+      - 80:8100
+    command: ionic serve
