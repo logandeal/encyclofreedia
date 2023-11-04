@@ -13,16 +13,7 @@ import TopicModel from "../components/TopicModel";
 import "./Home.css";
 
 const Home: React.FC = () => {
-  // Add or remove the "dark" class on the document body
-  const toggleDarkTheme = (shouldAdd: boolean) => {
-    document.body.classList.toggle("dark", shouldAdd);
-  };
-
   const [topicName, setTopicName] = useState("");
-
-  useEffect(() => {
-    toggleDarkTheme(true);
-  }, []);
 
   return (
     <IonPage>

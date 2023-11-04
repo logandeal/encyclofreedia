@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
@@ -39,53 +39,68 @@ import "./theme/variables.css";
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Redirect exact path="/" to="/home" />
-          {/*
+const App: React.FC = () => {
+  // Add or remove the "dark" class on the document body
+  const toggleDarkTheme = (shouldAdd: boolean) => {
+    document.body.classList.toggle("dark", shouldAdd);
+  };
+
+  useEffect(() => {
+    toggleDarkTheme(true);
+  }, []);
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Redirect exact path="/" to="/home" />
+            {/*
             Use the render method to reduce the number of renders your component will have due to a route change.
 
             Use the component prop when your component depends on the RouterComponentProps passed in automatically.
           */}
-          <Route path="/home" render={() => <HomePage />} exact={true} />
-          <Route path="/search" render={() => <SearchPage />} exact={true} />
-          <Route path="/account" render={() => <AccountPage />} exact={true} />
-        </IonRouterOutlet>
-        <IonTabBar slot="top" className="tabBar">
-          <IonTabButton tab="home" href="/home">
-            <IonLabel
-              style={{
-                fontFamily: "MuseoModerno",
-                fontSize: "40px",
-                color: "white",
-                paddingBottom: "60px",
-              }}
-            >
-              Freedia
-            </IonLabel>
-          </IonTabButton>
+            <Route path="/home" render={() => <HomePage />} exact={true} />
+            <Route path="/search" render={() => <SearchPage />} exact={true} />
+            <Route
+              path="/account"
+              render={() => <AccountPage />}
+              exact={true}
+            />
+          </IonRouterOutlet>
+          <IonTabBar slot="top" className="tabBar">
+            <IonTabButton tab="home" href="/home">
+              <IonLabel
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "40px",
+                  color: "white",
+                  paddingBottom: "60px",
+                }}
+              >
+                Freedia
+              </IonLabel>
+            </IonTabButton>
 
-          <IonTabButton tab="home" href="/home">
-            <IonIcon icon={home} />
-            <IonLabel>Home</IonLabel>
-          </IonTabButton>
+            <IonTabButton tab="home" href="/home">
+              <IonIcon icon={home} />
+              <IonLabel>Home</IonLabel>
+            </IonTabButton>
 
-          <IonTabButton tab="search" href="/search">
-            <IonIcon icon={search} />
-            <IonLabel>Search</IonLabel>
-          </IonTabButton>
+            <IonTabButton tab="search" href="/search">
+              <IonIcon icon={search} />
+              <IonLabel>Search</IonLabel>
+            </IonTabButton>
 
-          <IonTabButton tab="account" href="/account">
-            <IonIcon icon={person} />
-            <IonLabel>Account</IonLabel>
-          </IonTabButton>
-        </IonTabBar>
-      </IonTabs>
-    </IonReactRouter>
-  </IonApp>
-);
+            <IonTabButton tab="account" href="/account">
+              <IonIcon icon={person} />
+              <IonLabel>Account</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
