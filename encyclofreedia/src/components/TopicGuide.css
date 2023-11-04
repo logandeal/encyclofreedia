@@ -1,0 +1,30 @@
+.topic {
+  width: inherit;
+  animation: primary 9s linear infinite;
+}
+
+.primary {
+  animation: primary 9s linear infinite;
+}
+
+.secondary {
+  animation: secondary 9s linear infinite;
+}
+
+@keyframes primary {
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes secondary {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
