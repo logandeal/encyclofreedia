@@ -23,16 +23,19 @@ DROP TABLE IF EXISTS `comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `comment` (
-  `comment_id` bigint NOT NULL,
+  `comment_id` bigint NOT NULL AUTO_INCREMENT,
   `content` varchar(5000) NOT NULL,
-  `root_id` bigint NOT NULL,
+  `parent_id` bigint DEFAULT NULL,
   `user_id` bigint NOT NULL,
   `comment_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `post_id` bigint NOT NULL,
   PRIMARY KEY (`comment_id`),
-  KEY `author_id_idx` (`user_id`),
-  KEY `comment_root_id_idx` (`root_id`),
-  CONSTRAINT `comment_root_id` FOREIGN KEY (`root_id`) REFERENCES `comment` (`comment_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `comment_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON UPDATE CASCADE
+  KEY `comment_parent_id_idx` (`parent_id`),
+  KEY `comment_user_id_idx` (`user_id`),
+  KEY `comment_post_id_idx` (`post_id`),
+  CONSTRAINT `comment_parent_id` FOREIGN KEY (`parent_id`) REFERENCES `comment` (`comment_id`),
+  CONSTRAINT `comment_post_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
+  CONSTRAINT `comment_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -47,6 +50,24 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `comment_add_change` AFTER INSERT ON `comment` FOR EACH ROW BEGIN
 INSERT INTO rec_feed(creation, post, user, comment, comment_id)
 VALUES (TRUE, FALSE, FALSE, TRUE, NEW.comment_id);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `comment_AFTER_UPDATE` AFTER UPDATE ON `comment` FOR EACH ROW BEGIN
+INSERT INTO rec_feed(edit, comment, comment_id)
+VALUES (TRUE, TRUE, NEW.comment_id);
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -84,9 +105,30 @@ CREATE TABLE `local_user` (
   `password` varchar(45) NOT NULL,
   `user_id` bigint NOT NULL,
   PRIMARY KEY (`user_id`),
-  CONSTRAINT `local_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `local_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `local_user_BEFORE_INSERT` BEFORE INSERT ON `local_user` FOR EACH ROW BEGIN
+INSERT INTO user(type, username)
+VALUES (TRUE, NEW.username);
+SET NEW.user_id =
+(SELECT user_id FROM user
+WHERE username = NEW.username);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
@@ -99,6 +141,24 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `local_user_AFTER_INSERT` AFTER INSERT ON `local_user` FOR EACH ROW BEGIN
 INSERT INTO rec_feed(creation, post, user, comment, user_id)
 VALUES (TRUE, FALSE, TRUE, FALSE, NEW.user_id);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `local_user_AFTER_UPDATE` AFTER UPDATE ON `local_user` FOR EACH ROW BEGIN
+INSERT INTO rec_feed(edit, user, user_id)
+VALUES (TRUE, TRUE, NEW.user_id);
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -136,7 +196,7 @@ CREATE TABLE `post` (
   `body` varchar(5000) DEFAULT NULL,
   `link` varchar(500) DEFAULT NULL,
   `media` varchar(1000) DEFAULT NULL,
-  `post_id` bigint NOT NULL,
+  `post_id` bigint NOT NULL AUTO_INCREMENT,
   `user_id` bigint NOT NULL,
   `topic_id` bigint DEFAULT NULL,
   `post_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -144,7 +204,7 @@ CREATE TABLE `post` (
   KEY `post_topic_id_idx` (`topic_id`),
   KEY `post_user_id_idx` (`user_id`),
   CONSTRAINT `post_topic_id` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`topic_id`),
-  CONSTRAINT `post_user_id` FOREIGN KEY (`user_id`) REFERENCES `local_user` (`user_id`)
+  CONSTRAINT `post_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -159,6 +219,24 @@ DELIMITER ;;
 /*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `post_AFTER_INSERT` AFTER INSERT ON `post` FOR EACH ROW BEGIN
 INSERT INTO rec_feed(creation, post, user, comment, post_id)
 VALUES (TRUE, TRUE, FALSE, FALSE, NEW.post_id);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `post_AFTER_UPDATE` AFTER UPDATE ON `post` FOR EACH ROW BEGIN
+INSERT INTO rec_feed(edit, post, post_id)
+VALUES (TRUE, TRUE, NEW.post_id);
 END */;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -192,15 +270,33 @@ DROP TABLE IF EXISTS `reaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reaction` (
-  `user_id` bigint NOT NULL,
+  `user_id` bigint NOT NULL AUTO_INCREMENT,
   `post_id` bigint NOT NULL,
   `like` tinyint NOT NULL,
   KEY `reaction_post_id_idx` (`post_id`),
   KEY `reaction_user_id_idx` (`user_id`),
-  CONSTRAINT `reaction_post_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `reaction_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `reaction_post_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
+  CONSTRAINT `reaction_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `reaction_AFTER_INSERT` AFTER INSERT ON `reaction` FOR EACH ROW BEGIN
+INSERT INTO rec_feed(creation, reaction, reaction_value, user_id, post_id)
+VALUES (TRUE, TRUE, NEW.like, NEW.user_id, NEW.post_id);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `rec_feed`
@@ -210,22 +306,26 @@ DROP TABLE IF EXISTS `rec_feed`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `rec_feed` (
-  `creation` tinyint NOT NULL,
-  `post` tinyint NOT NULL,
-  `user` tinyint NOT NULL,
-  `comment` tinyint NOT NULL,
+  `creation` tinyint NOT NULL DEFAULT '0',
+  `edit` tinyint NOT NULL DEFAULT '0',
+  `post` tinyint NOT NULL DEFAULT '0',
+  `user` tinyint NOT NULL DEFAULT '0',
+  `comment` tinyint NOT NULL DEFAULT '0',
+  `reaction` tinyint NOT NULL DEFAULT '0',
+  `reaction_value` tinyint NOT NULL DEFAULT '0',
+  `topic` tinyint DEFAULT NULL,
   `post_id` bigint DEFAULT NULL,
   `user_id` bigint DEFAULT NULL,
   `comment_id` bigint DEFAULT NULL,
   `topic_id` bigint DEFAULT NULL,
-  KEY `source_id_idx` (`user_id`),
-  KEY `post_id_idx` (`post_id`),
-  KEY `comment_id_idx` (`comment_id`),
-  KEY `topic_id_idx` (`topic_id`),
-  CONSTRAINT `change_comment_id` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`comment_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `change_post_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `change_topic_id` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`topic_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `change_user_id` FOREIGN KEY (`user_id`) REFERENCES `local_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `rec_comment_id_idx` (`comment_id`),
+  KEY `rec_user_id_idx` (`user_id`),
+  KEY `rec_post_id_idx` (`post_id`),
+  KEY `rec_topic_id_idx` (`topic_id`),
+  CONSTRAINT `rec_comment_id` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`comment_id`),
+  CONSTRAINT `rec_post_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`post_id`),
+  CONSTRAINT `rec_topic_id` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`topic_id`),
+  CONSTRAINT `rec_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -238,10 +338,28 @@ DROP TABLE IF EXISTS `topic`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `topic` (
   `title` varchar(45) NOT NULL,
-  `topic_id` bigint NOT NULL,
+  `topic_id` bigint NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`topic_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `topic_AFTER_INSERT` AFTER INSERT ON `topic` FOR EACH ROW BEGIN
+INSERT INTO rec_feed(creation, topic, topic_id)
+VALUES (TRUE, TRUE, NEW.topic_id);
+END */;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 
 --
 -- Table structure for table `user`
@@ -252,9 +370,11 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `type` tinyint NOT NULL,
-  `user_id` bigint NOT NULL,
+  `user_id` bigint NOT NULL AUTO_INCREMENT,
+  `username` varchar(45) NOT NULL,
+  `hub_user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -266,4 +386,4 @@ CREATE TABLE `user` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-04  1:49:53
+-- Dump completed on 2023-11-04 11:27:00
