@@ -11,7 +11,18 @@ import {
 const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
   return (
     <>
-      <p>{topicName}</p>
+      <p
+        style={{
+          fontFamily: "MuseoModerno",
+          marginTop: "30px",
+          fontSize: "40px",
+          color: "white",
+          textAlign: "center",
+        }}
+      >
+        {topicName}
+      </p>
+      <br />
     </>
   );
 };
