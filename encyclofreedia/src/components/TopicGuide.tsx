@@ -11,7 +11,7 @@ import {
 import type { Animation } from "@ionic/react";
 import "./TopicGuide.css";
 
-const TopicGuide: React.FC = () => {
+const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
   const [isPlaying, setIsPlaying] = useState(true);
 
   const topics = document.querySelectorAll(".topic");
@@ -50,7 +50,14 @@ const TopicGuide: React.FC = () => {
           className="topic primary"
           color="primary"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Housing");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -64,7 +71,14 @@ const TopicGuide: React.FC = () => {
           className="topic primary"
           color="secondary"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Health");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -78,7 +92,14 @@ const TopicGuide: React.FC = () => {
           className="topic primary"
           color="tertiary"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Education");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -92,7 +113,14 @@ const TopicGuide: React.FC = () => {
           className="topic primary"
           color="success"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Environment");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -106,7 +134,14 @@ const TopicGuide: React.FC = () => {
           className="topic primary"
           color="warning"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Organizations");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -127,7 +162,14 @@ const TopicGuide: React.FC = () => {
           className="topic secondary"
           color="primary"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Housing");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -141,7 +183,14 @@ const TopicGuide: React.FC = () => {
           className="topic secondary"
           color="secondary"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Health");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -155,7 +204,14 @@ const TopicGuide: React.FC = () => {
           className="topic secondary"
           color="tertiary"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Education");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -169,7 +225,14 @@ const TopicGuide: React.FC = () => {
           className="topic secondary"
           color="success"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Environment");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>
@@ -183,7 +246,14 @@ const TopicGuide: React.FC = () => {
           className="topic secondary"
           color="warning"
           style={{ cursor: "pointer" }}
-          onClick={isPlaying ? pause : play}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Organizations");
+              pause();
+            } else {
+              play();
+            }
+          }}
         >
           <IonCardHeader>
             <IonCardTitle>

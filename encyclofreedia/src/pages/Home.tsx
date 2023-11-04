@@ -33,7 +33,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <Heading />
-        <TopicGuide />
+        <TopicGuide setTopicName={setTopicName} />
         <p
           style={{
             fontFamily: "MuseoModerno",
