@@ -4,9 +4,13 @@ import json
 from djangofreedia.models import *
 
 def login(request):
+    #check username in local_user and password matches
+    #return user_id to frontend
     return HttpResponse(request)
 
 def register(request):
+    #check username does not exist in local_user
+    #insert username, password into local_user
     return HttpResponse(request)
 
 def create_comment(request):
@@ -21,6 +25,8 @@ def create_post(request):
     return HttpResponse(request)
 
 def get_comments(request):
+    #get post_id from request
+    #get comments with post_id
     print(request)
     return HttpResponse("Connected to backend.")
 
@@ -37,17 +43,25 @@ def create_subtopic(request):
     return HttpResponse("Connected to backend.")
 
 def get_posts(request):
+    #get subtopic_id from request
+    #return posts where subtopic_id 
     print(request)
     return HttpResponse("Connected to backend.")
 
 def like_post(request):
+    #get user_id, post_id
+    #add to reaction with user_id, post_id, true
     print(request)
     return HttpResponse("Connected to backend.")
 
 def dislike_post(request):
+    #get user_id, post_id
+    #add to reaction with user_id, post_id, false
     print(request)
     return HttpResponse("Connected to backend.")
 
 def like_count(request):
+    #get post_id
+    #subtract total likes from total dislikes
     print(request)
     return HttpResponse("Connected to backend.")
