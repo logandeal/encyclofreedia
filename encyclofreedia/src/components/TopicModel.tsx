@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IonCard,
   IonCardContent,
@@ -14,6 +14,8 @@ import {
 } from "@ionic/react";
 
 const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
+  const [resourceTabOpen, setResourceTabOpen] = useState(false);
+
   return (
     <>
       <p
@@ -28,7 +30,10 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
         {topicName}
       </p>
       <br />
-      <IonContent color="light" style={{ width: "100%" }}>
+      <IonContent
+        color="light"
+        style={{ width: resourceTabOpen ? "60%" : "100%", float: "left" }}
+      >
         <p
           style={{
             fontFamily: "MuseoModerno",
@@ -70,6 +75,7 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                onClick={() => setResourceTabOpen(true)}
               >
                 View resources
               </IonButton>
@@ -179,7 +185,10 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
           </IonItem>
         </IonList>
       </IonContent>
-      <IonContent color="light" style={{ width: "50%" }}>
+      <IonContent
+        color="light"
+        style={{ width: resourceTabOpen ? "38.5%" : "0%", float: "right" }}
+      >
         <p>Hello</p>
       </IonContent>
     </>
