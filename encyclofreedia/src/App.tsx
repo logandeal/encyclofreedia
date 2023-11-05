@@ -50,7 +50,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <IonApp>
+    <IonApp className="mainContent">
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
@@ -60,7 +60,7 @@ const App: React.FC = () => {
 
             Use the component prop when your component depends on the RouterComponentProps passed in automatically.
           */}
-            <Route path="/home" render={() => <HomePage />} exact={true} />
+            <Route path="/" render={() => <HomePage />} exact={true} />
             <Route path="/search" render={() => <SearchPage />} exact={true} />
             <Route
               path="/account"
@@ -69,7 +69,7 @@ const App: React.FC = () => {
             />
           </IonRouterOutlet>
           <IonTabBar slot="top" className="tabBar">
-            <IonTabButton tab="home" href="/home">
+            <IonTabButton tab="home" href="/">
               <IonLabel
                 style={{
                   fontFamily: "MuseoModerno",
@@ -82,7 +82,7 @@ const App: React.FC = () => {
               </IonLabel>
             </IonTabButton>
 
-            <IonTabButton tab="home" href="/home">
+            <IonTabButton tab="home" href="/">
               <IonIcon icon={home} />
               <IonLabel>Home</IonLabel>
             </IonTabButton>

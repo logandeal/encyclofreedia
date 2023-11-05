@@ -1,36 +1,33 @@
 ion-title.title-large {
-    color: #c897d8;
-    font-size: 30px;
-    text-decoration: underline;
-  }
+  font-size: 30px;
+  text-decoration: underline;
+}
 
 .resourceCard {
-    margin: 50px;
-    border: 10px solid white;
-    border-radius: 25px;
+  margin: 20px;
+  width: 50px;
+  border: 10px solid white;
+  border-radius: 25px;
 }
 
 .resourceTitle {
-    font-size: large;
-    font-display: underline;
-    font-style: bold;
+  font-size: large;
+  font-display: underline;
+  font-style: bold;
 }
 
 .resourceText {
-    text-indent: 6em;
+  text-indent: 6em;
 }
 
 .resourceButton {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 75px;
-    border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 25px;
 }
 
 .resourceRow {
-    min-height: 125px;
-    display: flex;
-    height: 100%;
-    align-items: stretch;
+  height: 100%;
+  align-items: stretch;
 }

@@ -16,7 +16,12 @@ import {
 } from "@ionic/react";
 import ResourceCreator from './ResourceCreator';
 
-const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
+const TopicModel: React.FC<{
+  topicName: any;
+  topicColor: any;
+  setResourceOpen: any;
+}> = ({ topicName, topicColor, setResourceOpen }) => {
+  const [subTopicName, setSubTopicName] = useState("");
   const [resourceTabOpen, setResourceTabOpen] = useState(false);
 
   return (
@@ -44,7 +49,7 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
         color="light"
         style={{
           height: "50%",
-          width: resourceTabOpen ? "60%" : "100%",
+          width: resourceTabOpen ? "55%" : "100%",
           float: "left",
         }}
       >
@@ -89,9 +94,13 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
-                onClick={() => setResourceTabOpen(true)}
+                onClick={() => {
+                  setResourceTabOpen(true);
+                  setSubTopicName("First");
+                }}
+                color={topicColor}
               >
-                View resources
+                Resources
               </IonButton>
             </IonLabel>
           </IonItem>
@@ -124,8 +133,9 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                color={topicColor}
               >
-                View resources
+                Resources
               </IonButton>
             </IonLabel>
           </IonItem>
@@ -158,8 +168,9 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                color={topicColor}
               >
-                View resources
+                Resources
               </IonButton>
             </IonLabel>
           </IonItem>
@@ -192,8 +203,9 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                color={topicColor}
               >
-                View resources
+                Resources
               </IonButton>
             </IonLabel>
           </IonItem>
@@ -203,10 +215,24 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
         color="light"
         style={{
           height: "50%",
-          width: resourceTabOpen ? "38.5%" : "0%",
+          width: resourceTabOpen ? "43.5%" : "0%",
           float: "right",
         }}
       >
+        <IonButton
+          shape="round"
+          style={{
+            float: "right",
+            margin: "15px",
+          }}
+          size="large"
+          color={topicColor}
+          onClick={() => {
+            setResourceTabOpen(!resourceTabOpen);
+          }}
+        >
+          Close
+        </IonButton>
         <p
           style={{
             fontFamily: "MuseoModerno",
@@ -216,8 +242,106 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
             textAlign: "center",
           }}
         >
-          These are the resources for the {topicName} topic.
+          These are the resources for the {subTopicName} subtopic.
         </p>
+        <IonList inset={true} lines="full">
+          <IonItem>
+            <IonLabel>
+              <p
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "25px",
+                  color: "white",
+                }}
+              >
+                First Resource
+              </p>
+              <IonButton
+                shape="round"
+                style={{
+                  float: "right",
+                  marginTop: "-20px",
+                }}
+                size="large"
+                onClick={() => {
+                  setResourceOpen(true);
+
+                  function scrollToElement() {
+                    const element = document.getElementById("resource");
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    } else {
+                      // Element not found, retry in 100ms (adjust the delay as needed)
+                      setTimeout(scrollToElement, 100);
+                    }
+                  }
+
+                  scrollToElement();
+                }}
+                color={topicColor}
+              >
+                View below
+              </IonButton>
+            </IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>
+              <p
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "25px",
+                  color: "white",
+                }}
+              >
+                Second Resource
+              </p>
+              <IonButton
+                shape="round"
+                style={{
+                  float: "right",
+                  marginTop: "-20px",
+                }}
+                size="large"
+                color={topicColor}
+                onClick={() => {
+                  setResourceOpen(true);
+                }}
+              >
+                View below
+              </IonButton>
+            </IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>
+              <p
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "25px",
+                  color: "white",
+                }}
+              >
+                Third Resource
+              </p>
+              <IonButton
+                shape="round"
+                style={{
+                  float: "right",
+                  marginTop: "-20px",
+                }}
+                size="large"
+                color={topicColor}
+                onClick={() => {
+                  setResourceOpen(true);
+                }}
+              >
+                View below
+              </IonButton>
+            </IonLabel>
+          </IonItem>
+        </IonList>
       </IonContent>
     </>
   );

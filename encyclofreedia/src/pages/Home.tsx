@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   IonContent,
   IonHeader,
@@ -6,25 +6,30 @@ import {
   IonTitle,
   IonToolbar,
   IonToggle,
+  IonList,
+  IonItem,
 } from "@ionic/react";
 import Heading from "../components/Heading";
 import TopicGuide from "../components/TopicGuide";
 import TopicModel from "../components/TopicModel";
+import Resource from "../components/Resource";
 import "./Home.css";
 
 const Home: React.FC = () => {
   const [topicName, setTopicName] = useState("");
+  const [topicColor, setTopicColor] = useState("");
+  const [resourceOpen, setResourceOpen] = useState(false);
 
   return (
     <IonPage>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">TEST</IonTitle>
+            <IonTitle size="large">Freedia</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Heading />
-        <TopicGuide setTopicName={setTopicName} />
+        <TopicGuide setTopicName={setTopicName} setTopicColor={setTopicColor} />
         <p
           style={{
             fontFamily: "MuseoModerno",
@@ -48,7 +53,26 @@ const Home: React.FC = () => {
             Click a topic to see subtopics and resources.
           </p>
         )}
-        {topicName != "" && <TopicModel topicName={topicName} />}
+        {topicName != "" && (
+          <TopicModel
+            topicName={topicName}
+            topicColor={topicColor}
+            setResourceOpen={setResourceOpen}
+          />
+        )}
+        <div
+          style={{
+            marginTop: "540px",
+            width: "48.5vw",
+            alignContent: "center",
+          }}
+        >
+          {resourceOpen && (
+            <div id="resource">
+              <Resource topicColor={topicColor} />
+            </div>
+          )}
+        </div>
       </IonContent>
     </IonPage>
   );
