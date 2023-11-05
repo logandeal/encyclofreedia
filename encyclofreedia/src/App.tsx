@@ -68,17 +68,19 @@ const App: React.FC = () => {
             />
           </IonRouterOutlet>
           <IonTabBar slot="top" className="tabBar">
-            <IonTabButton tab="home" href="/">
-              <IonLabel
-                style={{
-                  fontFamily: "MuseoModerno",
-                  fontSize: "40px",
-                  color: "white",
-                  paddingBottom: "60px",
-                }}
-              >
-                Freedia
-              </IonLabel>
+            <IonTabButton tab="home" href="/" style={{ maxWidth: "20vw" }}>
+              <div>
+                <IonLabel
+                  style={{
+                    fontFamily: "MuseoModerno",
+                    fontSize: "40px",
+                    color: "white",
+                    paddingBottom: "60px",
+                  }}
+                >
+                  Encyclofreedia
+                </IonLabel>
+              </div>
             </IonTabButton>
 
             <IonTabButton tab="home" href="/">

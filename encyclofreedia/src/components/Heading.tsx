@@ -15,8 +15,10 @@ const Heading: React.FC = () => {
         }}
       >
         Welcome to{" "}
-        <strong style={{ fontSize: "25px", color: "white" }}>Freedia</strong>,
-        the internet encyclopedia for free resources!
+        <strong style={{ fontSize: "25px", color: "white" }}>
+          Encyclofreedia
+        </strong>
+        , the encyclopedia for free internet resources!
       </p>
     </div>
   );

@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Freedia</IonTitle>
+            <IonTitle size="large">Encyclofreedia</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Heading />
