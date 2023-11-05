@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 import datetime
+import json
 from djangofreedia.models import *
 
 def login(request):
@@ -15,9 +16,8 @@ def create_comment(request):
     return HttpResponse("Connected to backend.")
 
 def create_post(request):
-    #Get title, body, topic_id, user_id from request
-    # post = Post(title = reqTitle, body = reqBody, topic_id = reqTopic_id, user_id = reqUser_id)
-    # post.save()
+    post = Post(title = request.content_params['title'], body = request.content_params['body'], subtopic_id = request.content_params['subtopic_id'], user_id = request.content_params['user_id'])
+    post.save()
     return HttpResponse(request)
 
 def get_comments(request):

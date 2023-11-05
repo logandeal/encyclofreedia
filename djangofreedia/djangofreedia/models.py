@@ -9,12 +9,12 @@ class Comment(models.Model):
     user_id = models.BigIntegerField()
     post_id = models.BigIntegerField()
     content = models.CharField(max_length = 5000)
-    comment_time = models.DateTimeField()
+    comment_time = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
         return self.comment_id
     
-    class __meta__:
+    class Meta:
          db_table = 'comment'
          managed = False
     
@@ -28,12 +28,12 @@ class Post(models.Model):
     title = models.CharField(max_length = 500)
     body = models.CharField(max_length = 5000)
     link = models.CharField(max_length = 500)
-    post_time = models.DateTimeField()
+    post_time = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
         return self.post_id
     
-    class __meta__:
+    class Meta:
          db_table = 'post'
          managed = False
     
@@ -47,7 +47,7 @@ class User(models.Model):
     def __str__(self):
         return self.user_id
     
-    class __meta__:
+    class Meta:
          db_table = 'user'
          managed = False
     
@@ -60,7 +60,7 @@ class LocalUser(models.Model):
     def __str__(self):
         return self.user_id
     
-    class __meta__:
+    class Meta:
          db_table = 'local_user'
          managed = False
     
@@ -73,7 +73,7 @@ class InstanceTopic(models.Model):
     def __str__(self):
         return self.source_topic_id
     
-    class __meta__:
+    class Meta:
          db_table = 'instance_topic'
          managed = False
     
@@ -87,7 +87,7 @@ class Instance(models.Model):
     def __str__(self):
         return self.instance_id
     
-    class __meta__:
+    class Meta:
          db_table = 'instance'
          managed = False
     
@@ -99,7 +99,7 @@ class Topic(models.Model):
     def __str__(self):
         return self.topic_id
     
-    class __meta__:
+    class Meta:
          db_table = 'topic'
          managed = False
     
@@ -112,7 +112,7 @@ class Subtopic(models.Model):
     def __str__(self):
         return self.subtopic_id
     
-    class __meta__:
+    class Meta:
          db_table = 'subtopic'
          managed = False
     
@@ -125,6 +125,6 @@ class Reaction(models.Model):
     def __str__(self):
         return self.user_id
     
-    class __meta__:
+    class Meta:
          db_table = 'reaction'
          managed = False
