@@ -1,18 +1,22 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonList } from '@ionic/react';
-import Resource from '../components/Resource';
+import React from "react";
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonItem,
+  IonList,
+} from "@ionic/react";
+import Resource from "../components/Resource";
 
 const Search: React.FC = () => {
   return (
     <IonPage>
-      <IonHeader>
-        
-      </IonHeader>
+      <IonHeader></IonHeader>
       <IonContent fullscreen>
         <IonList>
-          <IonItem>
-            <Resource></Resource>
-          </IonItem>
+          <IonItem></IonItem>
         </IonList>
       </IonContent>
     </IonPage>

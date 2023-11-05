@@ -6,22 +6,26 @@ import {
   IonTitle,
   IonToolbar,
   IonToggle,
+  IonList,
+  IonItem,
 } from "@ionic/react";
 import Heading from "../components/Heading";
 import TopicGuide from "../components/TopicGuide";
 import TopicModel from "../components/TopicModel";
+import Resource from "../components/Resource";
 import "./Home.css";
 
 const Home: React.FC = () => {
   const [topicName, setTopicName] = useState("");
   const [topicColor, setTopicColor] = useState("");
+  const [resourceOpen, setResourceOpen] = useState(false);
 
   return (
     <IonPage>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">TEST</IonTitle>
+            <IonTitle size="large">Freedia</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Heading />
@@ -50,8 +54,15 @@ const Home: React.FC = () => {
           </p>
         )}
         {topicName != "" && (
-          <TopicModel topicName={topicName} topicColor={topicColor} />
+          <TopicModel
+            topicName={topicName}
+            topicColor={topicColor}
+            setResourceOpen={setResourceOpen}
+          />
         )}
+        <div style={{ marginTop: "500px", width: "49vw" }}>
+          {resourceOpen && <Resource topicColor={topicColor} />}
+        </div>
       </IonContent>
     </IonPage>
   );
