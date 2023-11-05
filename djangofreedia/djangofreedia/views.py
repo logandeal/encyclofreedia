@@ -2,6 +2,12 @@ from django.http import HttpResponse
 import datetime
 from djangofreedia.models import *
 
+def login(request):
+    return HttpResponse(request)
+
+def register(request):
+    return HttpResponse(request)
+
 def create_comment(request):
     #Get content, user_id, parent_id, and post_id from request
     # comment = Comment(comment_id = reqComment_id, user_id = reqUser_id, parent_id = reqParent_id, post_id = reqPost_id)
