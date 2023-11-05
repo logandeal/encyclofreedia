@@ -14,7 +14,7 @@ services:
     volumes:
       - /tmp/app/mysqld:/var/run/mysqld
       - encyclodb:/var/lib/mysql
-  dev:
+  production:
     # path to ionic serve Dockerfile
     build:
       context: encyclofreedia
