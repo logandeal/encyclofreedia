@@ -1,0 +1,23 @@
+.rCreatorButton {
+    --color: antiquewhite;
+    --color-hover: green;
+    --padding: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rCreatorModal {
+    --border-width: 4px;
+    --border-radius: 20px;
+    --border-color: antiquewhite;
+    --background-color: antiquewhite;
+}
+    .modalTitle {
+        text-align: center;
+        width: 100%;
+    }
+    .modalContent {
+        --position: center;
+        --background: antiquewhite;
+        background-color: antiquewhite;
+    }
