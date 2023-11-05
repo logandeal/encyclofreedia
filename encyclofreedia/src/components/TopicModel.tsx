@@ -32,7 +32,11 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
       <br />
       <IonContent
         color="light"
-        style={{ width: resourceTabOpen ? "60%" : "100%", float: "left" }}
+        style={{
+          height: "50%",
+          width: resourceTabOpen ? "60%" : "100%",
+          float: "left",
+        }}
       >
         <p
           style={{
@@ -187,9 +191,23 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
       </IonContent>
       <IonContent
         color="light"
-        style={{ width: resourceTabOpen ? "38.5%" : "0%", float: "right" }}
+        style={{
+          height: "50%",
+          width: resourceTabOpen ? "38.5%" : "0%",
+          float: "right",
+        }}
       >
-        <p>Hello</p>
+        <p
+          style={{
+            fontFamily: "MuseoModerno",
+            marginTop: "30px",
+            fontSize: "25px",
+            color: "#8c8c8c",
+            textAlign: "center",
+          }}
+        >
+          These are the resources for the {topicName} topic.
+        </p>
       </IonContent>
     </>
   );
