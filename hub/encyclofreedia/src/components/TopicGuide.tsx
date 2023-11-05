@@ -19,6 +19,36 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
 
   const topics = document.querySelectorAll(".topic");
 
+  const apiCall = async () => {
+    try {
+      const apiUrl = "https://api.example.com/data";
+
+      const data = {
+        test: "hello",
+      };
+
+      const response = await fetch("http://host.docker.internal/test-api/", {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+        },
+        redirect: "follow", // manual, *follow, error
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const responseJson = await response.json();
+      console.log("responseJson", responseJson);
+      return responseJson;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      throw error;
+    }
+  };
+
   const play = () => {
     topics.forEach((element) => {
       if (element instanceof HTMLElement) {
