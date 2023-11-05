@@ -15,6 +15,7 @@ import {
 } from "@ionic/react";
 import "./Resource.css";
 import { radioButtonOn, radioButtonOff, person, time } from "ionicons/icons";
+import VoteButtons from './VoteButtons';
 
 const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
   /* r = resource */
@@ -73,6 +74,9 @@ const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
               <IonIcon icon={time} color={topicColor}></IonIcon>
               <IonLabel>Time Posted</IonLabel>
             </IonChip>
+          {/*Upvote and downvote buttons*/}
+            <VoteButtons/>
+            <IonChip>5</IonChip>
           </IonRow>
         </IonGrid>
       </IonCardContent>
