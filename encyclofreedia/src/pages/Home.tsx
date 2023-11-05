@@ -36,7 +36,19 @@ const Home: React.FC = () => {
         >
           Many topics to explore... click one!
         </p>
-        <TopicModel topicName={topicName} />
+        {topicName == "" && (
+          <p
+            style={{
+              marginTop: "30px",
+              fontSize: "15px",
+              color: "#8c8c8c",
+              textAlign: "center",
+            }}
+          >
+            Click a topic to see subtopics and resources.
+          </p>
+        )}
+        {topicName != "" && <TopicModel topicName={topicName} />}
       </IonContent>
     </IonPage>
   );
