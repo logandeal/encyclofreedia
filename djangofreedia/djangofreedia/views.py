@@ -52,7 +52,7 @@ def get_posts(request):
 
 def like_post(request):
     #get user_id, post_id
-    #add to reaction with user_id, post_id, true
+    #add to reaction wgit pushith user_id, post_id, true
     print(request)
     return HttpResponse("Connected to backend.")
 
