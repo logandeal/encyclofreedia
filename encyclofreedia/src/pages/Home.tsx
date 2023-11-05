@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   IonContent,
   IonHeader,
@@ -60,8 +60,18 @@ const Home: React.FC = () => {
             setResourceOpen={setResourceOpen}
           />
         )}
-        <div style={{ marginTop: "500px", width: "49vw" }}>
-          {resourceOpen && <Resource topicColor={topicColor} />}
+        <div
+          style={{
+            marginTop: "540px",
+            width: "48.5vw",
+            alignContent: "center",
+          }}
+        >
+          {resourceOpen && (
+            <div id="resource">
+              <Resource topicColor={topicColor} />
+            </div>
+          )}
         </div>
       </IonContent>
     </IonPage>

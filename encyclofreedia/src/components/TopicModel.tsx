@@ -26,7 +26,7 @@ const TopicModel: React.FC<{
       <p
         style={{
           fontFamily: "MuseoModerno",
-          marginTop: "30px",
+          marginTop: "10px",
           fontSize: "40px",
           color: "white",
           textAlign: "center",
@@ -34,12 +34,11 @@ const TopicModel: React.FC<{
       >
         {topicName}
       </p>
-      <br />
       <IonContent
         color="light"
         style={{
           height: "50%",
-          width: resourceTabOpen ? "60%" : "100%",
+          width: resourceTabOpen ? "55%" : "100%",
           float: "left",
         }}
       >
@@ -205,7 +204,7 @@ const TopicModel: React.FC<{
         color="light"
         style={{
           height: "50%",
-          width: resourceTabOpen ? "38.5%" : "0%",
+          width: resourceTabOpen ? "43.5%" : "0%",
           float: "right",
         }}
       >
@@ -213,7 +212,7 @@ const TopicModel: React.FC<{
           shape="round"
           style={{
             float: "right",
-            margin: "20px",
+            margin: "15px",
           }}
           size="large"
           color={topicColor}
@@ -255,8 +254,21 @@ const TopicModel: React.FC<{
                 size="large"
                 onClick={() => {
                   setResourceOpen(true);
-                  // const content = document.getElementById("content");
-                  // content.scrollTop = content.scrollHeight;
+
+                  function scrollToElement() {
+                    const element = document.getElementById("resource");
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    } else {
+                      // Element not found, retry in 100ms (adjust the delay as needed)
+                      setTimeout(scrollToElement, 100);
+                    }
+                  }
+
+                  scrollToElement();
                 }}
                 color={topicColor}
               >
@@ -301,33 +313,6 @@ const TopicModel: React.FC<{
                 }}
               >
                 Third Resource
-              </p>
-              <IonButton
-                shape="round"
-                style={{
-                  float: "right",
-                  marginTop: "-20px",
-                }}
-                size="large"
-                color={topicColor}
-                onClick={() => {
-                  setResourceOpen(true);
-                }}
-              >
-                View below
-              </IonButton>
-            </IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>
-              <p
-                style={{
-                  fontFamily: "MuseoModerno",
-                  fontSize: "25px",
-                  color: "white",
-                }}
-              >
-                Fourth Resource
               </p>
               <IonButton
                 shape="round"

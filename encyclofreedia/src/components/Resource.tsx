@@ -34,7 +34,7 @@ const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
           {/* Core Resource Info */}
           <IonRow className="resourceRow">
             <IonCol>
-              <IonText color="primary">
+              <IonText color={topicColor}>
                 <IonTitle size="large" style={{ fontFamily: "MuseoModerno" }}>
                   {rTitle}
                 </IonTitle>
@@ -49,7 +49,7 @@ const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
                 className="resourceButton"
                 expand="block"
                 shape="round"
-                style={{ color: { topicColor } }}
+                color={topicColor}
               >
                 External Resource
               </IonButton>
@@ -58,19 +58,19 @@ const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
           {/* Additional Resource Data */}
           <IonRow>
             <IonChip>
-              <IonIcon icon={radioButtonOn} color="primary"></IonIcon>
+              <IonIcon icon={radioButtonOn} color={topicColor}></IonIcon>
               <IonLabel>Topic</IonLabel>
             </IonChip>
             <IonChip>
-              <IonIcon icon={radioButtonOff} color="primary"></IonIcon>
+              <IonIcon icon={radioButtonOff} color={topicColor}></IonIcon>
               <IonLabel>Subtopic</IonLabel>
             </IonChip>
             <IonChip>
-              <IonIcon icon={person} color="primary"></IonIcon>
+              <IonIcon icon={person} color={topicColor}></IonIcon>
               <IonLabel>User</IonLabel>
             </IonChip>
             <IonChip>
-              <IonIcon icon={time} color="primary"></IonIcon>
+              <IonIcon icon={time} color={topicColor}></IonIcon>
               <IonLabel>Time Posted</IonLabel>
             </IonChip>
           </IonRow>
