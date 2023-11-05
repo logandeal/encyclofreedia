@@ -42,15 +42,7 @@ const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
               </IonText>
             </IonCol>
             <IonCol>
-              <IonButton
-                href={rLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="resourceButton"
-                expand="block"
-                shape="round"
-                color={topicColor}
-              >
+              <IonButton href={rLink} target="_blank" rel="noopener noreferrer" className="resourceButton" expand="block" shape="round" color={topicColor}>
                 External Resource
               </IonButton>
             </IonCol>

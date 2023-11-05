@@ -21,7 +21,7 @@ const Account: React.FC = () => {
 
   return (
     <IonPage>
-      <IonContent fullscreen>
+      <IonContent fullscreen scrollY={false}>
         {isLoggedIn ? (
           <div>
             <button onClick={() => {

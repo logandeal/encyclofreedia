@@ -12,13 +12,38 @@ services:
     expose:
       - 3306
     volumes:
+      - /tmp/app/mysqld:/var/run/mysqld
       - encyclodb:/var/lib/mysql
   dev:
-    # path to ionic Dockerfile
-    build: encyclofreedia
+    # path to ionic serve Dockerfile
+    build:
+      context: encyclofreedia
+      dockerfile: Dockerfile.dev
     ports:
       - 80:8100
     command: ionic serve
+  web:
+    build: djangofreedia
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app/
+    ports:
+      - "8000:8000"
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    depends_on:
+      - mysql
+    links:
+      - mysql
+  prod:
+    # path to ionic build Dockerfile
+    build:
+      context: encyclofreedia
+      dockerfile: Dockerfile.prod
+    ports:
+      - 443:443
 
 volumes:
   encyclodb:

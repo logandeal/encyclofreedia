@@ -11,7 +11,10 @@ import {
   IonLabel,
   IonList,
   IonButton,
+  IonRow,
+  IonCol
 } from "@ionic/react";
+import ResourceCreator from './ResourceCreator';
 
 const TopicModel: React.FC<{
   topicName: any;
@@ -23,17 +26,25 @@ const TopicModel: React.FC<{
 
   return (
     <>
-      <p
-        style={{
-          fontFamily: "MuseoModerno",
-          marginTop: "10px",
-          fontSize: "40px",
-          color: "white",
-          textAlign: "center",
-        }}
-      >
-        {topicName}
-      </p>
+      <IonRow>
+        <IonCol size="6">
+          <p
+            style={{
+              fontFamily: "MuseoModerno",
+              marginTop: "30px",
+              fontSize: "40px",
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            {topicName}
+          </p>
+        </IonCol>
+        <IonCol size="6">
+          <ResourceCreator></ResourceCreator>
+        </IonCol>
+      </IonRow>
+      <br />
       <IonContent
         color="light"
         style={{
