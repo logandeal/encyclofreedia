@@ -67,8 +67,13 @@ const App: React.FC = () => {
               exact={true}
             />
           </IonRouterOutlet>
-          <IonTabBar slot="top" className="tabBar">
-            <IonTabButton tab="home" href="/" style={{ maxWidth: "20vw" }}>
+          <IonTabBar
+            slot="top"
+            className="tabBar"
+            color={"yellow"}
+            style={{ backgroundColor: "orange", color: "yellow" }}
+          >
+            <IonTabButton tab="home" href="/" style={{ maxWidth: "40vw" }}>
               <div>
                 <IonLabel
                   style={{
@@ -78,7 +83,7 @@ const App: React.FC = () => {
                     paddingBottom: "60px",
                   }}
                 >
-                  Encyclofreedia
+                  Mizzou Computing Association
                 </IonLabel>
               </div>
             </IonTabButton>

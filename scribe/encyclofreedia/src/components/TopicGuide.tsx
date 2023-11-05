@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { globe, home, medkit, people, school } from "ionicons/icons";
+import {
+  globe,
+  home,
+  medkit,
+  people,
+  school,
+  briefcase,
+  laptop,
+} from "ionicons/icons";
 import {
   IonCard,
   IonCardContent,
@@ -46,16 +54,17 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
     >
       <div
         style={{
+          marginRight: "-400px",
           display: "flex",
         }}
       >
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="primary"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Housing");
+              setTopicName("Intro to CS SIG");
               setTopicColor("primary");
               pause();
             } else {
@@ -65,19 +74,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Housing <IonIcon icon={home}></IonIcon>
+              Intro to CS <IonIcon icon={school}></IonIcon> SIG
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="secondary"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Health");
+              setTopicName("Interview Prep SIG");
               setTopicColor("secondary");
               pause();
             } else {
@@ -87,19 +96,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Health <IonIcon icon={medkit}></IonIcon>
+              Interview Prep <IonIcon icon={briefcase}></IonIcon> SIG
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="tertiary"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Education");
+              setTopicName("Web Dev SIG");
               setTopicColor("tertiary");
               pause();
             } else {
@@ -109,19 +118,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Education <IonIcon icon={school}></IonIcon>
+              Web Dev <IonIcon icon={globe}></IonIcon> SIG
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="success"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Environment");
+              setTopicName("TigerHacks Prep");
               setTopicColor("success");
               pause();
             } else {
@@ -131,19 +140,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Environment <IonIcon icon={globe}></IonIcon>
+              TigerHacks Prep <IonIcon icon={laptop}></IonIcon>
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="warning"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Organizations");
+              setTopicName("Events");
               setTopicColor("warning");
               pause();
             } else {
@@ -153,7 +162,29 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Organizations <IonIcon icon={people}></IonIcon>
+              Events <IonIcon icon={people}></IonIcon>
+            </IonCardTitle>
+            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          </IonCardHeader>
+          <IonCardContent>Card Content</IonCardContent>
+        </IonCard>
+        <IonCard
+          className="topic secondary special-card"
+          color="danger"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Projects");
+              setTopicColor("danger");
+              pause();
+            } else {
+              play();
+            }
+          }}
+        >
+          <IonCardHeader>
+            <IonCardTitle>
+              Projects <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
@@ -163,16 +194,17 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
       <div
         style={{
           marginTop: "-135px",
+          marginRight: "-400px",
           display: "flex",
         }}
       >
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="primary"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Housing");
+              setTopicName("Intro to CS SIG");
               setTopicColor("primary");
               pause();
             } else {
@@ -182,19 +214,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Housing <IonIcon icon={home}></IonIcon>
+              Intro to CS <IonIcon icon={school}></IonIcon> SIG
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="secondary"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Health");
+              setTopicName("Interview Prep SIG");
               setTopicColor("secondary");
               pause();
             } else {
@@ -204,19 +236,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Health <IonIcon icon={medkit}></IonIcon>
+              Interview Prep <IonIcon icon={briefcase}></IonIcon> SIG
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="tertiary"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Education");
+              setTopicName("Web Dev SIG");
               setTopicColor("tertiary");
               pause();
             } else {
@@ -226,19 +258,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Education <IonIcon icon={school}></IonIcon>
+              Web Dev <IonIcon icon={globe}></IonIcon> SIG
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="success"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Environment");
+              setTopicName("TigerHacks Prep");
               setTopicColor("success");
               pause();
             } else {
@@ -248,19 +280,19 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Environment <IonIcon icon={globe}></IonIcon>
+              TigerHacks Prep <IonIcon icon={laptop}></IonIcon>
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="warning"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (isPlaying) {
-              setTopicName("Organizations");
+              setTopicName("Events");
               setTopicColor("warning");
               pause();
             } else {
@@ -270,7 +302,29 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         >
           <IonCardHeader>
             <IonCardTitle>
-              Organizations <IonIcon icon={people}></IonIcon>
+              Events <IonIcon icon={people}></IonIcon>
+            </IonCardTitle>
+            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          </IonCardHeader>
+          <IonCardContent>Card Content</IonCardContent>
+        </IonCard>
+        <IonCard
+          className="topic secondary special-card"
+          color="danger"
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            if (isPlaying) {
+              setTopicName("Projects");
+              setTopicColor("danger");
+              pause();
+            } else {
+              play();
+            }
+          }}
+        >
+          <IonCardHeader>
+            <IonCardTitle>
+              Projects <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
             <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           </IonCardHeader>

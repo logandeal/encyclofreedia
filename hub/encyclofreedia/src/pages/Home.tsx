@@ -62,7 +62,6 @@ const Home: React.FC = () => {
         )}
         <div
           style={{
-            marginTop: "530px",
             width: "48.5vw",
             alignContent: "center",
           }}
