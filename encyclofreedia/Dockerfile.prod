@@ -7,22 +7,23 @@ COPY . /app
 WORKDIR /app
 
 RUN npm i -D -E react-scripts
-RUN ionic build
+RUN ionic build --prod
 RUN apt update
 RUN apt-get install apache2 -y
+RUN rm -r -f /var/www/html/*
+RUN echo "Options -MultiViews\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^ index.html [QSA,L]" >/var/www/html/.htaccess
 RUN cp -r build/* /var/www/html
+RUN rm -f /etc/apache2/apache2.conf
+RUN cp apache2.conf /etc/apache2/
 
-RUN echo "ServerName www.encyclofreedia.wiki" >> /etc/apache2/apache2.conf
 RUN cp /app/certs/*.crt /etc/ssl/certs/
 RUN cp /app/certs/*.key /etc/ssl/private/
 RUN rm -f /etc/apache2/sites-enabled/000-default.conf
 RUN cp /app/certs/000-default.conf /etc/apache2/sites-enabled/
 RUN a2enmod ssl
+RUN a2enmod rewrite
 
-# CMD [ "apachectl", "start" ]
-# RUN cpy build /var/www/html
-# RUN npm install -g serve
-# CMD [ "serve", "-s", "build" ]
 CMD [ "apachectl", "-D", "FOREGROUND" ]
+# CMD [ "tail", "-f", "/dev/null" ]
 
 EXPOSE 443

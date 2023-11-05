@@ -31,4 +31,5 @@ urlpatterns = [
     path('like-post/', views.like_post),
     path('dislike-post/', views.dislike_post),
     path('like-count/', views.like_count),
+    path('test-api/', views.test_api)
 ]

@@ -3,6 +3,11 @@ import datetime
 import json
 from djangofreedia.models import *
 
+def test_api(request):
+    print(request)
+    print(type(request))
+    return HttpResponse(True)
+
 def login(request):
     #get username and password from request
     #check username in local_user and password matches
