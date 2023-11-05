@@ -10,7 +10,8 @@ RUN npm i -D -E react-scripts
 RUN ionic build --prod
 RUN apt update
 RUN apt-get install apache2 -y
-COPY ".htaccess" build
+RUN rm -r -f /var/www/html/*
+RUN echo "Options -MultiViews\nRewriteEngine On\nRewriteCond %{REQUEST_FILENAME} !-f\nRewriteRule ^ index.html [QSA,L]" >/var/www/html/.htaccess
 RUN cp -r build/* /var/www/html
 RUN rm -f /etc/apache2/apache2.conf
 RUN cp apache2.conf /etc/apache2/
