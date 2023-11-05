@@ -68,7 +68,7 @@ const App: React.FC = () => {
             />
           </IonRouterOutlet>
           <IonTabBar slot="top" className="tabBar">
-            <IonTabButton tab="home" href="/" style={{ maxWidth: "20vw" }}>
+            <IonTabButton tab="home" href="/" style={{ maxWidth: "35vw" }}>
               <div>
                 <IonLabel
                   style={{

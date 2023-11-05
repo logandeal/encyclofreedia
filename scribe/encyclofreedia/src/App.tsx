@@ -73,12 +73,12 @@ const App: React.FC = () => {
             color={"yellow"}
             style={{ backgroundColor: "orange", color: "yellow" }}
           >
-            <IonTabButton tab="home" href="/" style={{ maxWidth: "40vw" }}>
+            <IonTabButton tab="home" href="/" style={{ maxWidth: "65vw" }}>
               <div>
                 <IonLabel
                   style={{
                     fontFamily: "MuseoModerno",
-                    fontSize: "40px",
+                    fontSize: "28px",
                     color: "white",
                     paddingBottom: "60px",
                   }}
