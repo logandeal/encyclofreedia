@@ -15,8 +15,10 @@ services:
       - /tmp/app/mysqld:/var/run/mysqld
       - encyclodb:/var/lib/mysql
   dev:
-    # path to ionic Dockerfile
-    build: encyclofreedia
+    # path to ionic serve Dockerfile
+    build:
+      context: encyclofreedia
+      dockerfile: Dockerfile.dev
     ports:
       - 80:8100
     command: ionic serve
@@ -35,6 +37,13 @@ services:
       - mysql
     links:
       - mysql
+  prod:
+    # path to ionic build Dockerfile
+    build:
+      context: encyclofreedia
+      dockerfile: Dockerfile.prod
+    ports:
+      - 443:443
 
 volumes:
   encyclodb:
