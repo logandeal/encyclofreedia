@@ -1,0 +1,36 @@
+ion-title.title-large {
+    color: #c897d8;
+    font-size: 30px;
+    text-decoration: underline;
+  }
+
+.resourceCard {
+    margin: 20px;
+    width: 90%;
+    border: 10px solid white;
+    border-radius: 25px;
+}
+.resourceTitle {
+    font-size: large;
+    font-display: underline;
+    font-style: bold;
+}
+
+.resourceText {
+    text-indent: 6em;
+}
+
+.resourceButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 75px;
+    border-radius: 25px;
+}
+
+.resourceRow {
+    min-height: 125px;
+    display: flex;
+    height: 100%;
+    align-items: stretch;
+}

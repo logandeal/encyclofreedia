@@ -1,5 +1,6 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonList } from '@ionic/react';
+import Resource from '../components/Resource';
 
 const Search: React.FC = () => {
   return (
@@ -8,11 +9,11 @@ const Search: React.FC = () => {
         
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Search</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+        <IonList>
+          <IonItem>
+            <Resource></Resource>
+          </IonItem>
+        </IonList>
       </IonContent>
     </IonPage>
   );

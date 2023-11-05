@@ -21,17 +21,7 @@ const Account: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Account</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Account</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         {isLoggedIn ? (
           <div>
             <button onClick={() => {
@@ -56,7 +46,7 @@ const Account: React.FC = () => {
                   </IonRow>
                   <IonCol size="auto">
                     {/* Login or sign up fields */}
-                    <IonList>
+                    <IonList className="inputList">
                       <IonItem className="usernameField">
                         <IonInput className="usernameField" label="" placeholder="Enter username"></IonInput>
                       </IonItem>

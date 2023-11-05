@@ -25,6 +25,11 @@
     margin: 24px;
   }
 
+  .inputList {
+
+    border-radius: 20px;
+  }
+
   ion-toggle {
     padding-left: 20px;
     padding-right: 20px;
@@ -50,7 +55,7 @@
   
   ion-toggle::part(handle) {
     background: #4e95c3;
-    border-radius: 4px;
+    border-radius: 10px;
     box-shadow: none;
   }
   
