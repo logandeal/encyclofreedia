@@ -4,22 +4,25 @@ import json
 from djangofreedia.models import *
 
 def login(request):
+    #get username and password from request
     #check username in local_user and password matches
-    #return user_id to frontend
+    #return user_id to frontend to store for future commands
     return HttpResponse(request)
 
 def register(request):
+    #get username, password from request
     #check username does not exist in local_user
     #insert username, password into local_user
     return HttpResponse(request)
 
 def create_comment(request):
-    #Get content, user_id, parent_id, and post_id from request
-    # comment = Comment(comment_id = reqComment_id, user_id = reqUser_id, parent_id = reqParent_id, post_id = reqPost_id)
-    #comment.save()
+    #get user_id, post_id, parent_id, content from frontend
+    #insert into comment
     return HttpResponse("Connected to backend.")
 
 def create_post(request):
+    #get subtopic_id, user_id, title, body from frontend
+    #insert into post
     post = Post(title = request.content_params['title'], body = request.content_params['body'], subtopic_id = request.content_params['subtopic_id'], user_id = request.content_params['user_id'])
     post.save()
     return HttpResponse(request)
@@ -27,19 +30,18 @@ def create_post(request):
 def get_comments(request):
     #get post_id from request
     #get comments with post_id
+    #return to frontend
     print(request)
     return HttpResponse("Connected to backend.")
 
 def create_topic(request):
     #get title from request
-    # topic = Topic(title = reqTitle)
-    #topic.save()
+    #insert into topic
     return HttpResponse("Connected to backend.")
 
 def create_subtopic(request):
     #get title, topic_id from request
-    # subtopic = Subtopic(title = reqTitle, topic_id = reqTopic_id)
-    #subtopic.save()
+    #insert into subtopic
     return HttpResponse("Connected to backend.")
 
 def get_posts(request):
