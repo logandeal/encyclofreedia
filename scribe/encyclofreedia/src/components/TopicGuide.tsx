@@ -106,9 +106,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Intro to CS <IonIcon icon={school}></IonIcon> SIG
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>5 resources, 3 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Meant for lowerclassmen students</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -128,9 +128,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Interview Prep <IonIcon icon={briefcase}></IonIcon> SIG
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>4 resources, 2 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Get prepared for the career fair</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -150,9 +150,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Web Dev <IonIcon icon={globe}></IonIcon> SIG
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>3 resources, 3 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Learn mainly front-end development</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -172,9 +172,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               TigerHacks Prep <IonIcon icon={laptop}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>2 resources, 4 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Assets related to TigerHacks planning</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -194,9 +194,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Events <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>3 resources, 3 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Any meetings that MCA holds</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -216,9 +216,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Projects <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 resources, 1 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Personal and group projects</IonCardContent>
         </IonCard>
       </div>
       <div
@@ -246,9 +246,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Intro to CS <IonIcon icon={school}></IonIcon> SIG
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>5 resources, 3 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Meant for lowerclassmen students</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -268,9 +268,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Interview Prep <IonIcon icon={briefcase}></IonIcon> SIG
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>4 resources, 2 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Get prepared for the career fair</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -290,9 +290,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Web Dev <IonIcon icon={globe}></IonIcon> SIG
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>3 resources, 3 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Learn mainly front-end development</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -312,9 +312,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               TigerHacks Prep <IonIcon icon={laptop}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>2 resources, 4 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Assets related to TigerHacks planning</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -334,9 +334,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Events <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>3 resources, 3 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Any meetings that MCA holds</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -356,9 +356,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Projects <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 resources, 1 forums</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Personal and group projects</IonCardContent>
         </IonCard>
       </div>
     </div>

@@ -24,6 +24,50 @@ const TopicModel: React.FC<{
   const [subTopicName, setSubTopicName] = useState("");
   const [resourceTabOpen, setResourceTabOpen] = useState(false);
 
+  const dictionary = {
+    Housing: ["Calculators", "Contracts", "Grants"],
+    Health: ["Medical", "Nutrition", "Lifestyle"],
+    Education: ["Financing", "Courses", "Lessons"],
+    Environment: ["Metrics", "Measurement", "Program"],
+    Organizations: ["Non-profits", "Co-ops", "Associations"],
+  };
+
+  const myArray = [
+    "Calculators",
+    "Contracts",
+    "Grants",
+    "Medical",
+    "Nutrition",
+    "Lifestyle",
+    "Financing",
+    "Courses",
+    "Lessons",
+    "Metrics",
+    "Measurement",
+    "Program",
+    "Non-profits",
+    "Co-ops",
+    "Associations",
+  ];
+
+  const myArray2 = [
+    "Online Calculators",
+    "Contract Templates",
+    "Grant Opportunities",
+    "Medical Information",
+    "Nutrition Guides",
+    "Lifestyle Tips",
+    "Financial Resources",
+    "Online Courses",
+    "Educational Lessons",
+    "Metrics Tools",
+    "Measurement Resources",
+    "Program Development",
+    "Non-profit Organizations",
+    "Cooperative Resources",
+    "Associations and Groups",
+  ];
+
   return (
     <>
       <IonRow>
@@ -73,7 +117,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                First Subtopic
+                {myArray[Math.floor(Math.random() * myArray.length)]}
               </p>
               <p
                 style={{
@@ -95,7 +139,7 @@ const TopicModel: React.FC<{
                 size="large"
                 onClick={() => {
                   setResourceTabOpen(true);
-                  setSubTopicName("First");
+                  setSubTopicName("first");
                 }}
                 color={topicColor}
               >
@@ -112,7 +156,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                Second Subtopic
+                {myArray[Math.floor(Math.random() * myArray.length)]}
               </p>
               <p
                 style={{
@@ -133,6 +177,10 @@ const TopicModel: React.FC<{
                 }}
                 size="large"
                 color={topicColor}
+                onClick={() => {
+                  setResourceTabOpen(true);
+                  setSubTopicName("second");
+                }}
               >
                 Resources
               </IonButton>
@@ -147,7 +195,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                Third Subtopic
+                {myArray[Math.floor(Math.random() * myArray.length)]}
               </p>
               <p
                 style={{
@@ -168,41 +216,10 @@ const TopicModel: React.FC<{
                 }}
                 size="large"
                 color={topicColor}
-              >
-                Resources
-              </IonButton>
-            </IonLabel>
-          </IonItem>
-          <IonItem>
-            <IonLabel>
-              <p
-                style={{
-                  fontFamily: "MuseoModerno",
-                  fontSize: "25px",
-                  color: "white",
+                onClick={() => {
+                  setResourceTabOpen(true);
+                  setSubTopicName("third");
                 }}
-              >
-                Fourth Subtopic
-              </p>
-              <p
-                style={{
-                  fontFamily: "MuseoModerno",
-                  marginTop: "20px",
-                  fontSize: "25px",
-                  color: "#8c8c8c",
-                  float: "left",
-                }}
-              >
-                25 resources, 30 posts, 300 upvotes
-              </p>
-              <IonButton
-                shape="round"
-                style={{
-                  float: "right",
-                  marginTop: "-20px",
-                }}
-                size="large"
-                color={topicColor}
               >
                 Resources
               </IonButton>
@@ -253,7 +270,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                First Resource
+                {myArray2[Math.floor(Math.random() * myArray2.length)]}
               </p>
               <IonButton
                 shape="round"
@@ -295,7 +312,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                Second Resource
+                {myArray2[Math.floor(Math.random() * myArray2.length)]}
               </p>
               <IonButton
                 shape="round"
@@ -307,6 +324,21 @@ const TopicModel: React.FC<{
                 color={topicColor}
                 onClick={() => {
                   setResourceOpen(true);
+
+                  function scrollToElement() {
+                    const element = document.getElementById("resource");
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    } else {
+                      // Element not found, retry in 100ms (adjust the delay as needed)
+                      setTimeout(scrollToElement, 100);
+                    }
+                  }
+
+                  scrollToElement();
                 }}
               >
                 View below
@@ -322,7 +354,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                Third Resource
+                {myArray2[Math.floor(Math.random() * myArray2.length)]}
               </p>
               <IonButton
                 shape="round"
@@ -334,6 +366,21 @@ const TopicModel: React.FC<{
                 color={topicColor}
                 onClick={() => {
                   setResourceOpen(true);
+
+                  function scrollToElement() {
+                    const element = document.getElementById("resource");
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    } else {
+                      // Element not found, retry in 100ms (adjust the delay as needed)
+                      setTimeout(scrollToElement, 100);
+                    }
+                  }
+
+                  scrollToElement();
                 }}
               >
                 View below

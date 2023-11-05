@@ -97,9 +97,11 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Housing <IonIcon icon={home}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>
+              2 Subtopics, 3 Resources, 4 Forums
+            </IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Real estate, property management, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -119,9 +121,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Health <IonIcon icon={medkit}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>3 Subtopics, 2 Resources, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Medications, medical supplies, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -141,9 +143,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Education <IonIcon icon={school}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 Subtopic, 2 Resources, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>K-12, University, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -163,9 +165,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Environment <IonIcon icon={globe}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 Subtopic, 1 Resource, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Clean energy, initiatives, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic primary special-card"
@@ -185,9 +187,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Organizations <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 Subtopic, 1 Resource, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Businesses, non-profits, etc</IonCardContent>
         </IonCard>
       </div>
       <div
@@ -214,9 +216,11 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Housing <IonIcon icon={home}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>
+              2 Subtopics, 3 Resources, 4 Forums
+            </IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Real estate, property management, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -236,9 +240,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Health <IonIcon icon={medkit}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>3 Subtopics, 2 Resources, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Medications, medical supplies, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -258,9 +262,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Education <IonIcon icon={school}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 Subtopic, 2 Resources, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>K-12, University, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -280,9 +284,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Environment <IonIcon icon={globe}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 Subtopic, 1 Resource, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Clean energy, initiatives, etc</IonCardContent>
         </IonCard>
         <IonCard
           className="topic secondary special-card"
@@ -302,9 +306,9 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
             <IonCardTitle>
               Organizations <IonIcon icon={people}></IonIcon>
             </IonCardTitle>
-            <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+            <IonCardSubtitle>1 Subtopic, 1 Resource, 1 Forum</IonCardSubtitle>
           </IonCardHeader>
-          <IonCardContent>Card Content</IonCardContent>
+          <IonCardContent>Businesses, non-profits, etc</IonCardContent>
         </IonCard>
       </div>
     </div>
