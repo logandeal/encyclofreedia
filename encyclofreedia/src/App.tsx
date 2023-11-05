@@ -54,7 +54,6 @@ const App: React.FC = () => {
       <IonReactRouter>
         <IonTabs>
           <IonRouterOutlet>
-            <Redirect exact path="/" to="/home" />
             {/*
             Use the render method to reduce the number of renders your component will have due to a route change.
 

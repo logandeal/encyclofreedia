@@ -12,9 +12,9 @@ import {
   IonList,
   IonButton,
   IonRow,
-  IonCol
+  IonCol,
 } from "@ionic/react";
-import ResourceCreator from './ResourceCreator';
+import ResourceCreator from "./ResourceCreator";
 
 const TopicModel: React.FC<{
   topicName: any;
@@ -27,7 +27,7 @@ const TopicModel: React.FC<{
   return (
     <>
       <IonRow>
-        <IonCol size="6">
+        <IonCol size="7">
           <p
             style={{
               fontFamily: "MuseoModerno",
@@ -40,11 +40,10 @@ const TopicModel: React.FC<{
             {topicName}
           </p>
         </IonCol>
-        <IonCol size="6">
-          <ResourceCreator></ResourceCreator>
+        <IonCol size="5" style={{ marginTop: "30px" }}>
+          <ResourceCreator topicColor={topicColor} topicName={topicName} />
         </IonCol>
       </IonRow>
-      <br />
       <IonContent
         color="light"
         style={{
