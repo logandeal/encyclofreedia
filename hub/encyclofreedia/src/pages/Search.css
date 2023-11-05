@@ -1,0 +1,7 @@
+.searchCard {
+    width: 80vw;
+    border-radius: 25px;
+    min-height: 375px;
+    --background: antiquewhite;
+    --color: antiquewhite;
+}

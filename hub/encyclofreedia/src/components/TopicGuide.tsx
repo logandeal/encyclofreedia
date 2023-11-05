@@ -50,7 +50,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         }}
       >
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="primary"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -72,7 +72,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="secondary"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -94,7 +94,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="tertiary"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -116,7 +116,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="success"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -138,7 +138,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic primary"
+          className="topic primary special-card"
           color="warning"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -167,7 +167,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
         }}
       >
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="primary"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -189,7 +189,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="secondary"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -211,7 +211,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="tertiary"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -233,7 +233,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="success"
           style={{ cursor: "pointer" }}
           onClick={() => {
@@ -255,7 +255,7 @@ const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
           <IonCardContent>Card Content</IonCardContent>
         </IonCard>
         <IonCard
-          className="topic secondary"
+          className="topic secondary special-card"
           color="warning"
           style={{ cursor: "pointer" }}
           onClick={() => {

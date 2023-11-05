@@ -13,7 +13,7 @@ import Heading from "../components/Heading";
 import TopicGuide from "../components/TopicGuide";
 import TopicModel from "../components/TopicModel";
 import Resource from "../components/Resource";
-import "./Home.css";
+import './Home.css';
 
 const Home: React.FC = () => {
   const [topicName, setTopicName] = useState("");
