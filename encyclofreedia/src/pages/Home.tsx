@@ -14,6 +14,7 @@ import "./Home.css";
 
 const Home: React.FC = () => {
   const [topicName, setTopicName] = useState("");
+  const [topicColor, setTopicColor] = useState("");
 
   return (
     <IonPage>
@@ -24,7 +25,7 @@ const Home: React.FC = () => {
           </IonToolbar>
         </IonHeader>
         <Heading />
-        <TopicGuide setTopicName={setTopicName} />
+        <TopicGuide setTopicName={setTopicName} setTopicColor={setTopicColor} />
         <p
           style={{
             fontFamily: "MuseoModerno",
@@ -48,7 +49,9 @@ const Home: React.FC = () => {
             Click a topic to see subtopics and resources.
           </p>
         )}
-        {topicName != "" && <TopicModel topicName={topicName} />}
+        {topicName != "" && (
+          <TopicModel topicName={topicName} topicColor={topicColor} />
+        )}
       </IonContent>
     </IonPage>
   );

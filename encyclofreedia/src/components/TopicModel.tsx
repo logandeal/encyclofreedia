@@ -13,7 +13,11 @@ import {
   IonButton,
 } from "@ionic/react";
 
-const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
+const TopicModel: React.FC<{ topicName: any; topicColor: any }> = ({
+  topicName,
+  topicColor,
+}) => {
+  const [subTopicName, setSubTopicName] = useState("");
   const [resourceTabOpen, setResourceTabOpen] = useState(false);
 
   return (
@@ -79,7 +83,11 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
-                onClick={() => setResourceTabOpen(true)}
+                onClick={() => {
+                  setResourceTabOpen(true);
+                  setSubTopicName("First");
+                }}
+                color={topicColor}
               >
                 View resources
               </IonButton>
@@ -114,6 +122,7 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                color={topicColor}
               >
                 View resources
               </IonButton>
@@ -148,6 +157,7 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                color={topicColor}
               >
                 View resources
               </IonButton>
@@ -182,6 +192,7 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
                   marginTop: "-20px",
                 }}
                 size="large"
+                color={topicColor}
               >
                 View resources
               </IonButton>
@@ -206,7 +217,7 @@ const TopicModel: React.FC<{ topicName: any }> = ({ topicName }) => {
             textAlign: "center",
           }}
         >
-          These are the resources for the {topicName} topic.
+          These are the resources for the {subTopicName} subtopic.
         </p>
       </IonContent>
     </>

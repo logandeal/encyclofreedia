@@ -11,7 +11,10 @@ import {
 import type { Animation } from "@ionic/react";
 import "./TopicGuide.css";
 
-const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
+const TopicGuide: React.FC<{ setTopicName: any; setTopicColor: any }> = ({
+  setTopicName,
+  setTopicColor,
+}) => {
   const [isPlaying, setIsPlaying] = useState(true);
 
   const topics = document.querySelectorAll(".topic");
@@ -53,6 +56,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Housing");
+              setTopicColor("primary");
               pause();
             } else {
               play();
@@ -74,6 +78,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Health");
+              setTopicColor("secondary");
               pause();
             } else {
               play();
@@ -95,6 +100,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Education");
+              setTopicColor("tertiary");
               pause();
             } else {
               play();
@@ -116,6 +122,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Environment");
+              setTopicColor("success");
               pause();
             } else {
               play();
@@ -137,6 +144,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Organizations");
+              setTopicColor("warning");
               pause();
             } else {
               play();
@@ -165,6 +173,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Housing");
+              setTopicColor("primary");
               pause();
             } else {
               play();
@@ -186,6 +195,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Health");
+              setTopicColor("secondary");
               pause();
             } else {
               play();
@@ -207,6 +217,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Education");
+              setTopicColor("tertiary");
               pause();
             } else {
               play();
@@ -228,6 +239,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Environment");
+              setTopicColor("success");
               pause();
             } else {
               play();
@@ -249,6 +261,7 @@ const TopicGuide: React.FC<{ setTopicName: any }> = ({ setTopicName }) => {
           onClick={() => {
             if (isPlaying) {
               setTopicName("Organizations");
+              setTopicColor("warning");
               pause();
             } else {
               play();
