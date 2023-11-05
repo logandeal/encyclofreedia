@@ -5,11 +5,11 @@ ion-title.title-large {
   }
 
 .resourceCard {
-    margin: 20px;
-    width: 90%;
+    margin: 50px;
     border: 10px solid white;
     border-radius: 25px;
 }
+
 .resourceTitle {
     font-size: large;
     font-display: underline;

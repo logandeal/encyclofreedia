@@ -27,7 +27,7 @@ const Resource: React.FC = () => {
                         </IonCol>
                         <IonCol>
                             <IonButton href={rLink} target="_blank" rel="noopener noreferrer" className="resourceButton" expand="block" shape="round">
-                                External Resource
+                                Resource Website
                             </IonButton>
                         </IonCol>
                     </IonRow>
