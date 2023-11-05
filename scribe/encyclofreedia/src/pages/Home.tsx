@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Encyclofreedia</IonTitle>
+            <IonTitle size="large">Mizzou Computing Association</IonTitle>
           </IonToolbar>
         </IonHeader>
         <Heading />
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
               textAlign: "center",
             }}
           >
-            Click a topic to see subtopics and resources.
+            Click a topic to see its resources.
           </p>
         )}
         {topicName != "" && (
@@ -62,7 +62,6 @@ const Home: React.FC = () => {
         )}
         <div
           style={{
-            marginTop: "530px",
             width: "48.5vw",
             alignContent: "center",
           }}

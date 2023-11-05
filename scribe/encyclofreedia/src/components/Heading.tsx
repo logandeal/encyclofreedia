@@ -16,9 +16,9 @@ const Heading: React.FC = () => {
       >
         Welcome to{" "}
         <strong style={{ fontSize: "25px", color: "white" }}>
-          Encyclofreedia
+          Mizzou Computing Association
         </strong>
-        , the encyclopedia for free internet resources!
+        , the largest computer science org at Mizzou!
       </p>
     </div>
   );

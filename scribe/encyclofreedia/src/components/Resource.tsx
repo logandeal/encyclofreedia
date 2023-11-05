@@ -28,7 +28,7 @@ const Resource: React.FC<{ topicColor: any }> = ({ topicColor }) => {
     const rPostTime*/
 
   return (
-    <IonCard className="resourceCard">
+    <IonCard className="resourceCard special-card">
       <IonCardContent>
         <IonGrid>
           {/* Core Resource Info */}
