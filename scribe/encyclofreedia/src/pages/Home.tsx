@@ -39,7 +39,7 @@ const Home: React.FC = () => {
             textAlign: "center",
           }}
         >
-          Many topics to explore... click one!
+          Many topics to explore... click one! (Click again to explore more)
         </p>
         {topicName == "" && (
           <p

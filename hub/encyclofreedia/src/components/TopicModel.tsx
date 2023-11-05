@@ -128,7 +128,7 @@ const TopicModel: React.FC<{
                   float: "left",
                 }}
               >
-                25 resources, 30 posts, 300 upvotes
+                1 resources, 2 posts, 200 upvotes
               </p>
               <IonButton
                 shape="round"
@@ -167,7 +167,7 @@ const TopicModel: React.FC<{
                   float: "left",
                 }}
               >
-                25 resources, 30 posts, 300 upvotes
+                4 resources, 2 posts, 150 upvotes
               </p>
               <IonButton
                 shape="round"
@@ -206,7 +206,7 @@ const TopicModel: React.FC<{
                   float: "left",
                 }}
               >
-                25 resources, 30 posts, 300 upvotes
+                4 resources, 4 posts, 59 upvotes
               </p>
               <IonButton
                 shape="round"
