@@ -61,7 +61,7 @@ const TopicModel: React.FC<{
             textAlign: "center",
           }}
         >
-          These are the resources for the {subTopicName} subtopic.
+          These are the resources for {topicName}.
         </p>
         <IonList inset={true} lines="full">
           <IonItem>
@@ -73,7 +73,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                First Resource
+                FreeCodeCamp
               </p>
               <IonButton
                 shape="round"
@@ -115,7 +115,7 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                Second Resource
+                MDN Web Docs
               </p>
               <IonButton
                 shape="round"
@@ -142,7 +142,88 @@ const TopicModel: React.FC<{
                   color: "white",
                 }}
               >
-                Third Resource
+                Kaggle
+              </p>
+              <IonButton
+                shape="round"
+                style={{
+                  float: "right",
+                  marginTop: "-20px",
+                }}
+                size="large"
+                color={topicColor}
+                onClick={() => {
+                  setResourceOpen(true);
+                }}
+              >
+                View below
+              </IonButton>
+            </IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>
+              <p
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "25px",
+                  color: "white",
+                }}
+              >
+                GoDot Engine
+              </p>
+              <IonButton
+                shape="round"
+                style={{
+                  float: "right",
+                  marginTop: "-20px",
+                }}
+                size="large"
+                color={topicColor}
+                onClick={() => {
+                  setResourceOpen(true);
+                }}
+              >
+                View below
+              </IonButton>
+            </IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>
+              <p
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "25px",
+                  color: "white",
+                }}
+              >
+                LeetCode
+              </p>
+              <IonButton
+                shape="round"
+                style={{
+                  float: "right",
+                  marginTop: "-20px",
+                }}
+                size="large"
+                color={topicColor}
+                onClick={() => {
+                  setResourceOpen(true);
+                }}
+              >
+                View below
+              </IonButton>
+            </IonLabel>
+          </IonItem>
+          <IonItem>
+            <IonLabel>
+              <p
+                style={{
+                  fontFamily: "MuseoModerno",
+                  fontSize: "25px",
+                  color: "white",
+                }}
+              >
+                Fast.ai
               </p>
               <IonButton
                 shape="round"
