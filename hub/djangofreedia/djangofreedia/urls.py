@@ -16,7 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', views.login),
+    path('register/', views.register),
+    path('create-post/', views.create_post),
+    path('create-comment/', views.create_comment),
+    path('get-comments/', views.get_comments),
+    path('create-topic/', views.create_topic),
+    path('create-subtopic/', views.create_subtopic),
+    path('get-posts/', views.get_posts),
+    path('like-post/', views.like_post),
+    path('dislike-post/', views.dislike_post),
+    path('like-count/', views.like_count),
+    path('test-api/', views.test_api)
 ]
