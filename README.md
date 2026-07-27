@@ -6,6 +6,10 @@ Encyclofreedia is a self-hostable, community-driven knowledge base for local res
 and subtopics (Housing, Health, Education, Environment, Organizations, etc.) instead of subreddits. Anyone running an instance can host their own
 community's set of resources, forums, and posts.
 
+Built at **TigerHacks 2023**. The idea was to chase some of the original openness of the early web — rather than concentrating a community's
+knowledge inside one platform, let anyone spin up their own self-hosted "scribe" of local resources, with the option to federate posts back to a
+shared "hub."
+
 ## Architecture
 
 The project is split into two Dockerized instance types that share the same stack:
@@ -37,6 +41,17 @@ read or write the database.
 - Ionic React, TypeScript
 - Django, MySQL
 - Docker / docker-compose
+
+Each instance's `Dockerfile.prod` and `apache2.conf` were built to deploy behind Apache on Google Cloud — the hackathon build was live at
+`encyclofreedia.wiki`, though that domain isn't running anymore.
+
+## What's next
+
+Continued work would mean finishing the API wiring described in the Status section above, then picking back up the original federation goal —
+letting independently-run scribes actually sync topics into a hub. There was also interest in folding this into IndependUS's broader civic-tech
+projects.
+
+Read more on [DevPost](https://devpost.com/software/encyclofreedia).
 
 ## Running locally
 
