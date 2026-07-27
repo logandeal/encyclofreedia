@@ -1,5 +1,6 @@
 # Welcome to Encyclofreedia!
-**[DevPost](https://devpost.com/software/encyclofreedia).**
+
+**[See DevPost](https://devpost.com/software/encyclofreedia)**
 
 ### Internet upgrade loading...
 
