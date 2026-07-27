@@ -1,4 +1,5 @@
 # Welcome to Encyclofreedia!
+**[DevPost](https://devpost.com/software/encyclofreedia).**
 
 ### Internet upgrade loading...
 
@@ -50,8 +51,6 @@ Each instance's `Dockerfile.prod` and `apache2.conf` were built to deploy behind
 Continued work would mean finishing the API wiring described in the Status section above, then picking back up the original federation goal —
 letting independently-run scribes actually sync topics into a hub. There was also interest in folding this into IndependUS's broader civic-tech
 projects.
-
-Read more on [DevPost](https://devpost.com/software/encyclofreedia).
 
 ## Running locally
 
